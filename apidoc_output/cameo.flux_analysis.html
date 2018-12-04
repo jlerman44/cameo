@@ -1,0 +1,573 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cameo.flux_analysis package &#8212; cameo 0.11.6 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cameo.models package" href="cameo.models.html" />
+    <link rel="prev" title="cameo.data package" href="cameo.data.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../_static/cameo_touch_icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cameo-flux-analysis-package">
+<h1>cameo.flux_analysis package<a class="headerlink" href="#cameo-flux-analysis-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cameo.flux_analysis.analysis">
+<span id="cameo-flux-analysis-analysis-module"></span><h2>cameo.flux_analysis.analysis module<a class="headerlink" href="#module-cameo.flux_analysis.analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cameo.flux_analysis.analysis.find_blocked_reactions">
+<code class="descclassname">cameo.flux_analysis.analysis.</code><code class="descname">find_blocked_reactions</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/analysis.html#find_blocked_reactions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.analysis.find_blocked_reactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine reactions that cannot carry steady-state flux.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> (<em>cobra.Model</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of reactions.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.analysis.flux_variability_analysis">
+<code class="descclassname">cameo.flux_analysis.analysis.</code><code class="descname">flux_variability_analysis</code><span class="sig-paren">(</span><em>model</em>, <em>reactions=None</em>, <em>fraction_of_optimum=0.0</em>, <em>pfba_factor=None</em>, <em>remove_cycles=False</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/analysis.html#flux_variability_analysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.analysis.flux_variability_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flux variability analysis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – </li>
+<li><strong>reactions</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a><em> or </em><em>iterable</em>) – The list of reaction whose lower and upper bounds should be determined.
+If <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><code class="xref any docutils literal notranslate"><span class="pre">None</span></code></a>, all reactions in <a class="reference internal" href="cameo.html#cameo.util.ProblemCache.model" title="cameo.util.ProblemCache.model"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">model</span></code></a> will be assessed.</li>
+<li><strong>fraction_of_optimum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Fix the objective of the model to a fraction of it’s max. Expected to be within [0;1]. Lower values increase
+variability.</li>
+<li><strong>pfba_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – If not None, fix the total sum of reaction fluxes to its minimum times a factor. Expected to be within [
+1;inf]. Higher factors increase flux variability to a certain point since the bound for the objective is
+still fixed.</li>
+<li><strong>remove_cycles</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – If true, apply the CycleFreeFlux algorithm to remove loops from each simulated flux distribution.</li>
+<li><strong>view</strong> (<a class="reference internal" href="cameo.html#cameo.parallel.SequentialView" title="cameo.parallel.SequentialView"><em>cameo.parallel.SequentialView</em></a><em> or </em><a class="reference internal" href="cameo.html#cameo.parallel.MultiprocessingView" title="cameo.parallel.MultiprocessingView"><em>cameo.parallel.MultiprocessingView</em></a><em> or </em><em>ipython.cluster.DirectView</em>) – A parallelization view.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Pandas DataFrame containing the results of the flux variability analysis.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">pandas.DataFrame</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.analysis.phenotypic_phase_plane">
+<code class="descclassname">cameo.flux_analysis.analysis.</code><code class="descname">phenotypic_phase_plane</code><span class="sig-paren">(</span><em>model</em>, <em>variables</em>, <em>objective=None</em>, <em>source=None</em>, <em>points=20</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/analysis.html#phenotypic_phase_plane"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.analysis.phenotypic_phase_plane" title="Permalink to this definition">¶</a></dt>
+<dd><p>Phenotypic phase plane analysis [1].</p>
+<p>Implements a phenotypic phase plan analysis with interpretation same as
+that presented in [1] but calculated by optimizing the model for all
+steps of the indicated variables (instead of using shadow prices).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – </li>
+<li><strong>variables</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>reaction</em><em> or </em><em>iterable</em>) – A reaction ID, reaction, or list of reactions to be varied.</li>
+<li><strong>objective</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>reaction</em><em> or </em><em>optlang.Objective</em><em> or </em><em>Metabolite</em><em>, </em><em>optional</em>) – An objective, a reaction’s flux, or a metabolite’s production to be minimized/maximized
+(defaults to the current model objective).</li>
+<li><strong>source</strong> (<em>Reaction</em><em> or </em><em>reaction identifier</em>) – The reaction to use as the source when calculating mass and carbon yield. Set to the medium reaction with the
+highest input carbon flux if left None.</li>
+<li><strong>points</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em> or </em><em>iterable</em>) – Number of points to be interspersed between the variable bounds.
+A list of same same dimensions as <code class="xref any docutils literal notranslate"><span class="pre">variables</span></code> can be used to specify
+variable specific numbers of points.</li>
+<li><strong>view</strong> (<a class="reference internal" href="cameo.html#cameo.parallel.SequentialView" title="cameo.parallel.SequentialView"><em>SequentialView</em></a><em> or </em><a class="reference internal" href="cameo.html#cameo.parallel.MultiprocessingView" title="cameo.parallel.MultiprocessingView"><em>MultiprocessingView</em></a><em> or </em><em>ipython.cluster.DirectView</em>) – A parallelization view.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The phenotypic phase plane with flux, mol carbon input / mol carbon
+output, gram input / gram output</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">PhenotypicPhasePlaneResult</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<dl class="docutils">
+<dt>[1] Edwards, J. S., Ramakrishna, R. and Palsson, B. O. (2002). Characterizing the metabolic phenotype: a phenotype</dt>
+<dd>phase plane analysis. Biotechnology and Bioengineering, 77(1), 27–36. doi:10.1002/bit.10047</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.analysis.flux_balance_impact_degree">
+<code class="descclassname">cameo.flux_analysis.analysis.</code><code class="descname">flux_balance_impact_degree</code><span class="sig-paren">(</span><em>model</em>, <em>knockouts</em>, <em>view=&lt;cameo.parallel.SequentialView object&gt;</em>, <em>method='fva'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/analysis.html#flux_balance_impact_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.analysis.flux_balance_impact_degree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flux balance impact degree by Zhao et al 2013</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – Wild-type model</li>
+<li><strong>knockouts</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – Reactions to knockout</li>
+<li><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – The method to compute the perturbation. default is “fva” - Flux Variability Analysis.
+It can also be computed with “em” - Elementary modes (not implemented)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>FluxBalanceImpactDegreeResult</strong> – The changes in reachable reactions (reactions that can carry flux)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">perturbation</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.flux_analysis.simulation">
+<span id="cameo-flux-analysis-simulation-module"></span><h2>cameo.flux_analysis.simulation module<a class="headerlink" href="#module-cameo.flux_analysis.simulation" title="Permalink to this headline">¶</a></h2>
+<p>Methods for simulating flux distributions.
+Currently implements:
+* fba - Flux Balance Analysis
+* pfba - Parsimonious Flux Balance Analysis
+* lmoma - (Linear) Minimization of Metabolic Adjustment
+* room - Regulatory On/Off Minimization</p>
+<dl class="function">
+<dt id="cameo.flux_analysis.simulation.fba">
+<code class="descclassname">cameo.flux_analysis.simulation.</code><code class="descname">fba</code><span class="sig-paren">(</span><em>model</em>, <em>objective=None</em>, <em>reactions=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/simulation.html#fba"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.simulation.fba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flux Balance Analysis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – </li>
+<li><strong>objective</strong> (<em>a valid objective - see SolverBaseModel.objective</em><em> (</em><em>optional</em><em>)</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Contains the result of the linear solver.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">FluxDistributionResult</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.simulation.pfba">
+<code class="descclassname">cameo.flux_analysis.simulation.</code><code class="descname">pfba</code><span class="sig-paren">(</span><em>model</em>, <em>objective=None</em>, <em>reactions=None</em>, <em>fraction_of_optimum=1</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/simulation.html#pfba"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.simulation.pfba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parsimonious Enzyme Usage Flux Balance Analysis [1].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – The model to perform pFBA with</li>
+<li><strong>objective</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>reaction</em><em> or </em><em>optlang.Objective</em>) – An objective to be minimized/maximized for</li>
+<li><strong>reactions</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – list of reactions to get results for. Getting fluxes from solution can be time consuming so if not all are
+needed it may be faster to request specific reactions.</li>
+<li><strong>fraction_of_optimum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Fix the value of the current objective to a fraction of is maximum.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Contains the result of the linear solver.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">FluxDistributionResult</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r0811661e34cc-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Lewis, N. E., Hixson, K. K., Conrad, T. M., Lerman, J. A., Charusanti, P., Polpitiya, A. D., …
+Palsson, B. Ø. (2010). Omic data from evolved E. coli are consistent with computed optimal growth from
+genome-scale models. Molecular Systems Biology, 6, 390. doi:10.1038/msb.2010.47</td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.simulation.moma">
+<code class="descclassname">cameo.flux_analysis.simulation.</code><code class="descname">moma</code><span class="sig-paren">(</span><em>model</em>, <em>reference=None</em>, <em>cache=None</em>, <em>reactions=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/simulation.html#moma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.simulation.moma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimization of Metabolic Adjustment[1]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – </li>
+<li><strong>reference</strong> (<em>FluxDistributionResult</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – </li>
+<li><strong>cache</strong> (<a class="reference internal" href="cameo.html#cameo.util.ProblemCache" title="cameo.util.ProblemCache"><em>ProblemCache</em></a>) – </li>
+<li><strong>reactions</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Contains the result of the solver.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">FluxDistributionResult</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r6859c0bd71d9-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Segrè, D., Vitkup, D., &amp; Church, G. M. (2002). Analysis of optimality in natural and perturbed metabolic
+networks. Proceedings of the National Academy of Sciences of the United States of America, 99(23), 15112–7.
+doi:10.1073/pnas.232349399</td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.simulation.lmoma">
+<code class="descclassname">cameo.flux_analysis.simulation.</code><code class="descname">lmoma</code><span class="sig-paren">(</span><em>model</em>, <em>reference=None</em>, <em>cache=None</em>, <em>reactions=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/simulation.html#lmoma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.simulation.lmoma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linear Minimization Of Metabolic Adjustment [1].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – </li>
+<li><strong>reference</strong> (<em>FluxDistributionResult</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – </li>
+<li><strong>cache</strong> (<a class="reference internal" href="cameo.html#cameo.util.ProblemCache" title="cameo.util.ProblemCache"><em>ProblemCache</em></a>) – </li>
+<li><strong>reactions</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Contains the result of the solver.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">FluxDistributionResult</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="rd290c19d3349-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Becker, S. A., Feist, A. M., Mo, M. L., Hannum, G., Palsson, B. Ø., &amp; Herrgard, M. J. (2007).
+Quantitative prediction of cellular metabolism with constraint-based models: the COBRA Toolbox.
+Nature Protocols, 2(3), 727–38. doi:10.1038/nprot.2007.99</td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.simulation.room">
+<code class="descclassname">cameo.flux_analysis.simulation.</code><code class="descname">room</code><span class="sig-paren">(</span><em>model</em>, <em>reference=None</em>, <em>cache=None</em>, <em>delta=0.03</em>, <em>epsilon=0.001</em>, <em>reactions=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/simulation.html#room"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.simulation.room" title="Permalink to this definition">¶</a></dt>
+<dd><p>Regulatory On/Off Minimization [1].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – </li>
+<li><strong>reference</strong> (<em>FluxDistributionResult</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – </li>
+<li><strong>delta</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – </li>
+<li><strong>epsilon</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – </li>
+<li><strong>cache</strong> (<a class="reference internal" href="cameo.html#cameo.util.ProblemCache" title="cameo.util.ProblemCache"><em>ProblemCache</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Contains the result of the linear solver.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">FluxDistributionResult</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="reed22725e4ad-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Tomer Shlomi, Omer Berkman and Eytan Ruppin, “Regulatory on/off minimization of metabolic
+flux changes after genetic perturbations”, PNAS 2005 102 (21) 7695-7700; doi:10.1073/pnas.0406346102</td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.flux_analysis.structural">
+<span id="cameo-flux-analysis-structural-module"></span><h2>cameo.flux_analysis.structural module<a class="headerlink" href="#module-cameo.flux_analysis.structural" title="Permalink to this headline">¶</a></h2>
+<p>Methods for stoichiometric analaysis</p>
+<dl class="function">
+<dt id="cameo.flux_analysis.structural.find_dead_end_reactions">
+<code class="descclassname">cameo.flux_analysis.structural.</code><code class="descname">find_dead_end_reactions</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/structural.html#find_dead_end_reactions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.structural.find_dead_end_reactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify reactions that are structurally prevented from carrying flux (dead ends).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.structural.find_coupled_reactions">
+<code class="descclassname">cameo.flux_analysis.structural.</code><code class="descname">find_coupled_reactions</code><span class="sig-paren">(</span><em>model</em>, <em>return_dead_ends=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/structural.html#find_coupled_reactions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.structural.find_coupled_reactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find reaction sets that are structurally forced to carry equal flux</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cameo.flux_analysis.structural.ShortestElementaryFluxModes">
+<em class="property">class </em><code class="descclassname">cameo.flux_analysis.structural.</code><code class="descname">ShortestElementaryFluxModes</code><span class="sig-paren">(</span><em>model</em>, <em>reactions=None</em>, <em>c=1e-05</em>, <em>copy=True</em>, <em>change_bounds=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/structural.html#ShortestElementaryFluxModes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.structural.ShortestElementaryFluxModes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>indicator_variables</strong></dt>
+<dd></dd>
+<dt><strong>model</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cameo.flux_analysis.structural.ShortestElementaryFluxModes.model">
+<code class="descname">model</code><a class="headerlink" href="#cameo.flux_analysis.structural.ShortestElementaryFluxModes.model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cameo.flux_analysis.structural.ShortestElementaryFluxModes.indicator_variables">
+<code class="descname">indicator_variables</code><a class="headerlink" href="#cameo.flux_analysis.structural.ShortestElementaryFluxModes.indicator_variables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.flux_analysis.util">
+<span id="cameo-flux-analysis-util-module"></span><h2>cameo.flux_analysis.util module<a class="headerlink" href="#module-cameo.flux_analysis.util" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cameo.flux_analysis.util.remove_infeasible_cycles">
+<code class="descclassname">cameo.flux_analysis.util.</code><code class="descname">remove_infeasible_cycles</code><span class="sig-paren">(</span><em>model</em>, <em>fluxes</em>, <em>fix=()</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/util.html#remove_infeasible_cycles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.util.remove_infeasible_cycles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove thermodynamically infeasible cycles from a flux distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – The model that generated the flux distribution.</li>
+<li><strong>fluxes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – The flux distribution containing infeasible loops.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A cycle free flux distribution.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="rd902019e0384-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>A. A. Desouki, F. Jarre, G. Gelius-Dietrich, and M. J. Lercher, “CycleFreeFlux: efficient removal of
+thermodynamically infeasible loops from flux distributions.”</td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.flux_analysis.util.fix_pfba_as_constraint">
+<code class="descclassname">cameo.flux_analysis.util.</code><code class="descname">fix_pfba_as_constraint</code><span class="sig-paren">(</span><em>model</em>, <em>multiplier=1</em>, <em>fraction_of_optimum=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/flux_analysis/util.html#fix_pfba_as_constraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.flux_analysis.util.fix_pfba_as_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fix the pFBA optimum as a constraint</p>
+<p>Useful when setting other objectives, like the maximum flux through given reaction may be more realistic if all
+other fluxes are not allowed to reach their full upper bounds, but collectively constrained to max sum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – The model to add the pfba constraint to</li>
+<li><strong>multiplier</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – The multiplier of the minimal sum of all reaction fluxes to use as the constraint.</li>
+<li><strong>fraction_of_optimum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – The fraction of the objective value’s optimum to use as constraint when getting the pFBA objective’s minimum</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.flux_analysis">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cameo.flux_analysis" title="Permalink to this headline">¶</a></h2>
+<p>This package provides methods for simulating and analyzing models.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/cameo_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=biosustain&repo=cameo&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+    
+
+<p>
+<a class="badge" href="https://travis-ci.org/biosustain/cameo">
+    <img
+        alt="https://secure.travis-ci.org/biosustain/cameo.svg?branch=master"
+        src="https://secure.travis-ci.org/biosustain/cameo.svg?branch=master"
+    />
+</a>
+</p>
+
+
+
+
+    
+
+<p>
+<a class="badge" href="https://codecov.io/github/biosustain/cameo">
+    <img
+    alt="https://codecov.io/github/biosustain/cameo/coverage.svg?branch=master"
+    src="https://codecov.io/github/biosustain/cameo/coverage.svg?branch=master"
+    />
+</a>
+</p>
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../API.html">API Docs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cameo.html">cameo package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../API.html">API Docs</a><ul>
+  <li><a href="cameo.html">cameo package</a><ul>
+      <li>Previous: <a href="cameo.data.html" title="previous chapter">cameo.data package</a></li>
+      <li>Next: <a href="cameo.models.html" title="next chapter">cameo.models package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Novo Nordisk Foundation Center for Biosustainability.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/apidoc_output/cameo.flux_analysis.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/biosustain/cameo" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

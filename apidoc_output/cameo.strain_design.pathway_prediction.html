@@ -1,0 +1,302 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cameo.strain_design.pathway_prediction package &#8212; cameo 0.11.6 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../_static/cameo_touch_icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cameo-strain-design-pathway-prediction-package">
+<h1>cameo.strain_design.pathway_prediction package<a class="headerlink" href="#cameo-strain-design-pathway-prediction-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cameo.strain_design.pathway_prediction.pathway_predictor">
+<span id="cameo-strain-design-pathway-prediction-pathway-predictor-module"></span><h2>cameo.strain_design.pathway_prediction.pathway_predictor module<a class="headerlink" href="#module-cameo.strain_design.pathway_prediction.pathway_predictor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor">
+<em class="property">class </em><code class="descclassname">cameo.strain_design.pathway_prediction.pathway_predictor.</code><code class="descname">PathwayPredictor</code><span class="sig-paren">(</span><em>model</em>, <em>universal_model=None</em>, <em>mapping=None</em>, <em>compartment_regexp=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/strain_design/pathway_prediction/pathway_predictor.html#PathwayPredictor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cameo.core.html#cameo.core.strain_design.StrainDesignMethod" title="cameo.core.strain_design.StrainDesignMethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">cameo.core.strain_design.StrainDesignMethod</span></code></a></p>
+<p>Pathway predictions from a universal set of reaction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>cobra.Model</em>) – The model that represents the host organism.</li>
+<li><strong>universal_model</strong> (<em>cobra.Model</em><em>, </em><em>optional</em>) – The model that represents the universal set of reactions.
+A default model will be used if omitted.</li>
+<li><strong>mapping</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a><em>, </em><em>optional</em>) – A dictionary that contains a mapping between metabolite
+identifiers in <a class="reference internal" href="#cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.model" title="cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.model"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">model</span></code></a> and <code class="xref any docutils literal notranslate"><span class="pre">universal_model</span></code></li>
+<li><strong>compartment_regexp</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – A regular expression that matches host metabolites’ compartments
+that should be connected to the universal reaction model. If not
+provided, the compartment containing most metabolites will be
+chosen.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.model">
+<code class="descname">model</code><a class="headerlink" href="#cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The provided model + universal_model + adapter reactions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">cobra.Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>Determine production pathways for propane-1,3-diol (MNXM2861 in the metanetx namespace)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">cameo.api</span> <span class="k">import</span> <span class="n">hosts</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pathway_predictor</span> <span class="o">=</span> <span class="n">PathwayPredictor</span><span class="p">(</span><span class="n">hosts</span><span class="o">.</span><span class="n">ecoli</span><span class="o">.</span><span class="n">iJO1366</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pathway_predictor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">product</span><span class="o">=</span><span class="n">pathway_predictor</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">metabolites</span><span class="o">.</span><span class="n">MNXM2861</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwargs)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.run" title="cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>([product,&nbsp;max_predictions,&nbsp;…])</td>
+<td>Run pathway prediction for a desired product.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>product=None</em>, <em>max_predictions=inf</em>, <em>min_production=0.1</em>, <em>timeout=None</em>, <em>callback=None</em>, <em>silent=False</em>, <em>allow_native_exchanges=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/strain_design/pathway_prediction/pathway_predictor.html#PathwayPredictor.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.strain_design.pathway_prediction.pathway_predictor.PathwayPredictor.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run pathway prediction for a desired product.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>product</strong> (<em>Metabolite</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Metabolite or id or name of metabolite to find production pathways for.</li>
+<li><strong>max_predictions</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – The maximum number of predictions to compute.</li>
+<li><strong>min_production</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – The minimum acceptable production flux to product.</li>
+<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The time limit [seconds] per attempted prediction.</li>
+<li><strong>callback</strong> (<em>function</em>) – A function that takes a successfully predicted pathway.</li>
+<li><strong>silent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – If True will print the pathways and max flux values.</li>
+<li><strong>allow_native_exchanges</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – If True, exchange reactions for native metabolites will be allowed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The predicted pathways.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">PathwayPredictions</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.strain_design.pathway_prediction.util">
+<span id="cameo-strain-design-pathway-prediction-util-module"></span><h2>cameo.strain_design.pathway_prediction.util module<a class="headerlink" href="#module-cameo.strain_design.pathway_prediction.util" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cameo.strain_design.pathway_prediction.util.create_adapter_reactions">
+<code class="descclassname">cameo.strain_design.pathway_prediction.util.</code><code class="descname">create_adapter_reactions</code><span class="sig-paren">(</span><em>original_metabolites</em>, <em>universal_model</em>, <em>mapping</em>, <em>compartment_regexp</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/strain_design/pathway_prediction/util.html#create_adapter_reactions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.strain_design.pathway_prediction.util.create_adapter_reactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create adapter reactions that connect host and universal model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>original_metabolites</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – List of host metabolites.</li>
+<li><strong>universal_model</strong> (<em>cobra.Model</em>) – The universal model.</li>
+<li><strong>mapping</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – A mapping between between host and universal model metabolite IDs.</li>
+<li><strong>compartment_regexp</strong> (<em>regex</em>) – A compiled regex that matches metabolites that should be connected to the universal model.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>reactions</strong> – The list of adapter reactions.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.strain_design.pathway_prediction.util.display_pathway">
+<code class="descclassname">cameo.strain_design.pathway_prediction.util.</code><code class="descname">display_pathway</code><span class="sig-paren">(</span><em>pathway</em>, <em>i</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/strain_design/pathway_prediction/util.html#display_pathway"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.strain_design.pathway_prediction.util.display_pathway" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-cameo.strain_design.pathway_prediction">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cameo.strain_design.pathway_prediction" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/cameo_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=biosustain&repo=cameo&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+    
+
+<p>
+<a class="badge" href="https://travis-ci.org/biosustain/cameo">
+    <img
+        alt="https://secure.travis-ci.org/biosustain/cameo.svg?branch=master"
+        src="https://secure.travis-ci.org/biosustain/cameo.svg?branch=master"
+    />
+</a>
+</p>
+
+
+
+
+    
+
+<p>
+<a class="badge" href="https://codecov.io/github/biosustain/cameo">
+    <img
+    alt="https://codecov.io/github/biosustain/cameo/coverage.svg?branch=master"
+    src="https://codecov.io/github/biosustain/cameo/coverage.svg?branch=master"
+    />
+</a>
+</p>
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../API.html">API Docs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cameo.html">cameo package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../API.html">API Docs</a><ul>
+  <li><a href="cameo.html">cameo package</a><ul>
+  <li><a href="cameo.strain_design.html">cameo.strain_design package</a><ul>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Novo Nordisk Foundation Center for Biosustainability.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/apidoc_output/cameo.strain_design.pathway_prediction.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/biosustain/cameo" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

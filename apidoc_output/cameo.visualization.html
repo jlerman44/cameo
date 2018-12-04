@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cameo.visualization package &#8212; cameo 0.11.6 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="cameo.ui package" href="cameo.ui.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../_static/cameo_touch_icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cameo-visualization-package">
+<h1>cameo.visualization package<a class="headerlink" href="#cameo-visualization-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cameo.visualization.escher_ext">
+<span id="cameo-visualization-escher-ext-module"></span><h2>cameo.visualization.escher_ext module<a class="headerlink" href="#module-cameo.visualization.escher_ext" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cameo.visualization.escher_ext.NotebookBuilder">
+<em class="property">class </em><code class="descclassname">cameo.visualization.escher_ext.</code><code class="descname">NotebookBuilder</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/visualization/escher_ext.html#NotebookBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.escher_ext.NotebookBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">escher.plots.Builder</span></code></p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_in_browser</span></code>([ip,&nbsp;port,&nbsp;n_retries,&nbsp;…])</td>
+<td>Launch a web browser to view the map.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_in_notebook</span></code>([js_source,&nbsp;menu,&nbsp;…])</td>
+<td>Embed the Map within the current IPython Notebook.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_html</span></code>([filepath,&nbsp;overwrite,&nbsp;js_source,&nbsp;…])</td>
+<td>Save an HTML file containing the map.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>update</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cameo.visualization.escher_ext.NotebookBuilder.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>reaction_data=None</em>, <em>metabolite_data=None</em>, <em>gene_data=None</em>, <em>reaction_scale=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/visualization/escher_ext.html#NotebookBuilder.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.escher_ext.NotebookBuilder.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.visualization.palette">
+<span id="cameo-visualization-palette-module"></span><h2>cameo.visualization.palette module<a class="headerlink" href="#module-cameo.visualization.palette" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cameo.visualization.palette.PaletteMapper">
+<em class="property">class </em><code class="descclassname">cameo.visualization.palette.</code><code class="descname">PaletteMapper</code><a class="reference internal" href="../_modules/cameo/visualization/palette.html#PaletteMapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.palette.PaletteMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p class="rubric">Methods</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>add_palettalbe_palette</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>map_palette</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cameo.visualization.palette.PaletteMapper.add_palettalbe_palette">
+<code class="descname">add_palettalbe_palette</code><span class="sig-paren">(</span><em>name</em>, <em>palette</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/visualization/palette.html#PaletteMapper.add_palettalbe_palette"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.palette.PaletteMapper.add_palettalbe_palette" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cameo.visualization.palette.PaletteMapper.map_palette">
+<code class="descname">map_palette</code><span class="sig-paren">(</span><em>name</em>, <em>n=3</em>, <em>reverse=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/visualization/palette.html#PaletteMapper.map_palette"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.palette.PaletteMapper.map_palette" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.visualization.sympy_ext">
+<span id="cameo-visualization-sympy-ext-module"></span><h2>cameo.visualization.sympy_ext module<a class="headerlink" href="#module-cameo.visualization.sympy_ext" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cameo.visualization.visualization">
+<span id="cameo-visualization-visualization-module"></span><h2>cameo.visualization.visualization module<a class="headerlink" href="#module-cameo.visualization.visualization" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cameo.visualization.visualization.draw_knockout_result">
+<code class="descclassname">cameo.visualization.visualization.</code><code class="descname">draw_knockout_result</code><span class="sig-paren">(</span><em>model</em>, <em>map_name</em>, <em>simulation_method</em>, <em>knockouts</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/visualization/visualization.html#draw_knockout_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.visualization.draw_knockout_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cameo.visualization.visualization.inchi_to_svg">
+<code class="descclassname">cameo.visualization.visualization.</code><code class="descname">inchi_to_svg</code><span class="sig-paren">(</span><em>inchi</em>, <em>file=None</em>, <em>debug=False</em>, <em>three_d=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/visualization/visualization.html#inchi_to_svg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.visualization.inchi_to_svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an SVG drawing from an InChI string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>inchi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">An InChI string.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A vector graphics of the compound represented as SVG.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;svg version=”1.1” id=”topsvg”
+xmlns=”<a class="reference external" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>” xmlns:xlink=”http://www.w3.org/1999/xlink”
+xmlns:cml=”http://www.xml-cml.org/schema” x=”0” y=”0” width=”200px” height=”200px” viewBox=”0 0 100 100”&gt;
+&lt;title&gt;OBDepict&lt;/title&gt;
+&lt;rect x=”0” y=”0” width=”100” height=”100” fill=”white”/&gt;
+&lt;text text-anchor=”middle” font-size=”6” fill =”black” font-family=”sans-serif”
+x=”50” y=”98” &gt;&lt;/text&gt;
+&lt;g transform=”translate(0,0)”&gt;
+&lt;svg width=”100” height=”100” x=”0” y=”0” viewBox=”0 0 80 80”
+font-family=”sans-serif” stroke=”rgb(0,0,0)” stroke-width=”2”  stroke-linecap=”round”&gt;
+&lt;text x=”36” y=”48” fill=”rgb(255,12,12)”  stroke=”rgb(255,12,12)” stroke-width=”1” font-size=”16” &gt;OH&lt;/text&gt;
+&lt;text x=”60” y=”51.68” fill=”rgb(255,12,12)”  stroke=”rgb(255,12,12)” stroke-width=”1” font-size=”13” &gt;2&lt;/text&gt;
+&lt;/svg&gt;
+&lt;/g&gt;
+&lt;/svg&gt;</p>
+<p>‘  # noqa</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cameo.visualization.visualization.graph_to_svg">
+<code class="descclassname">cameo.visualization.visualization.</code><code class="descname">graph_to_svg</code><span class="sig-paren">(</span><em>g</em>, <em>layout=&lt;function fruchterman_reingold_layout&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cameo/visualization/visualization.html#graph_to_svg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cameo.visualization.visualization.graph_to_svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the SVG of a matplotlib figure generated from a graph</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cameo.visualization">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cameo.visualization" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/cameo_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=biosustain&repo=cameo&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+    
+
+<p>
+<a class="badge" href="https://travis-ci.org/biosustain/cameo">
+    <img
+        alt="https://secure.travis-ci.org/biosustain/cameo.svg?branch=master"
+        src="https://secure.travis-ci.org/biosustain/cameo.svg?branch=master"
+    />
+</a>
+</p>
+
+
+
+
+    
+
+<p>
+<a class="badge" href="https://codecov.io/github/biosustain/cameo">
+    <img
+    alt="https://codecov.io/github/biosustain/cameo/coverage.svg?branch=master"
+    src="https://codecov.io/github/biosustain/cameo/coverage.svg?branch=master"
+    />
+</a>
+</p>
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../API.html">API Docs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cameo.html">cameo package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../API.html">API Docs</a><ul>
+  <li><a href="cameo.html">cameo package</a><ul>
+      <li>Previous: <a href="cameo.ui.html" title="previous chapter">cameo.ui package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Novo Nordisk Foundation Center for Biosustainability.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/apidoc_output/cameo.visualization.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/biosustain/cameo" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
